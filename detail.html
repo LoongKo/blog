@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我的博客</title>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/marked.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      function getParams(url) {
+          var theRequest = new Object();
+          if (!url)
+              url = location.href;
+          if (url.indexOf("?") !== -1){
+              var str = url.substr(url.indexOf("?") + 1) + "&";
+              var strs = str.split("&");
+              for (var i = 0; i < strs.length - 1; i++){
+                  var key = strs[i].substring(0, strs[i].indexOf("="));
+                  var val = strs[i].substring(strs[i].indexOf("=") + 1);
+                  theRequest[key] = val;
+              }
+          }
+          return theRequest;
+      }
+      var id = getParams()['id']
+      $.get('markdown/'+id+'/1.md',function(data,status){
+        $('#content').empty().append(marked(data))
+      });
+    })
+  </script>
+  <style type="text/css">
+    #main{
+      width: 800px;
+      margin: auto;
+    }
+    #main h1 a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+<div id="main">
+  <h1><a href="index.html">我的博客</a></h1>
+  <div id="content"></div>
+</div>
+</body>
+</html>

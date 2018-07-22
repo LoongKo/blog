@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>我的博客</title>
+  <title>LoongKo的博客</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/marked.js"></script>
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css" href="highlight/styles/github.css">
+  <link rel="stylesheet" type="text/css" href="css/github-markdown.css">
   <script type="text/javascript">
     $(function(){
       function getParams(url) {
@@ -22,25 +27,40 @@
           return theRequest;
       }
       var id = getParams()['id']
-      $.get('markdown/'+id+'/1.md',function(data,status){
-        $('#content').empty().append(marked(data))
+      $.get('markdown/'+id+'/article.md',function(data,status){
+        $('#content').empty().append(marked(data));
+        $('#content').find('img').each(function(){
+          $(this).attr('src','markdown/'+id+'/'+$(this).attr('src'));
+        })
       });
+      hljs.initHighlightingOnLoad();
     })
   </script>
   <style type="text/css">
     #main{
-      width: 800px;
-      margin: auto;
+      padding-left: 20px;
     }
     #main h1 a{
       text-decoration: none;
+      color: black;
+    }
+    .back{
+      border: none;
+      width: 50px;
+      height: 30px;
+      background-color: #51C332;
+      color: white;
+    }
+    #content{
+      word-break:break-all;
     }
   </style>
 </head>
 <body>
 <div id="main">
-  <h1><a href="index.html">我的博客</a></h1>
-  <div id="content"></div>
+  <h1><a href="index.html">LoongKo的博客</a></h1>
+  <button class="back" onclick="javascript:history.back(-1);">返回</button>
+  <div id="content" class="markdown-body"></div>
 </div>
 </body>
 </html>

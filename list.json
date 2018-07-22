@@ -1,4 +1,8 @@
 [
+  {"id":"6","tag":"drupal","title":"drupal 7在一个form新增或者修改一个字段"},
+  {"id":"5","tag":"other","title":"利用会声会影制作简单的左右声道歌曲"},
+  {"id":"4","tag":"python","title":"python写简单的图形界面汉诺塔解题器"},
+  {"id":"3","tag":"js","title":"js中数组去重复简单方法"},
   {"id":"2","tag":"html","title":"html局部打印"},
   {"id":"1","tag":"php","title":"php保留键随机打乱数组顺序"}
 ]

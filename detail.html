@@ -25,7 +25,8 @@
           return theRequest;
       }
       var id = getParams()['id']
-      $.get('markdown/'+id+'/article.md',{v:Math.random()},function(data,status){
+//       $.get('markdown/'+id+'/article.md',{v:Math.random()},function(data,status){
+        $.get('markdown',{v:Math.random()},function(data,status){
         $('#content').empty().append(marked(data));
         $('#content').find('img').each(function(){
           $(this).attr('src','markdown/'+id+'/'+$(this).attr('src'));

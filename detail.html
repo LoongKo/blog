@@ -11,7 +11,7 @@
   <script type="text/javascript">
     $(function(){
       var id = getParams()['id']
-      $.get('markdown/'+id+'/article.md',{v:Math.random()},function(data,status){
+      $.get('markdown/'+id+'/article.md',function(data,status){
         var data = handledata(data);
         $('#head').empty().append('<h2>'+data['headinfo']['title']+'</h2><h3>'+data['headinfo']['date']+'</h3>');
         $('#content').empty().append(marked(data['content']));

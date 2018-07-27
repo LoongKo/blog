@@ -1,6 +1,6 @@
 $(function(){
     var allpost = [];
-    var is_404 = false;
+    var count_404 = 0;
     for (var i = 1; i < 100; i++) {
       $.ajax({
         url:'markdown/'+i+'/article.md',

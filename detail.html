@@ -5,28 +5,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/default.js"></script>
   <script type="text/javascript" src="js/marked.js"></script>
   <link rel="stylesheet" type="text/css" href="css/github-markdown.css">
   <script type="text/javascript">
     $(function(){
-      function getParams(url) {
-          var theRequest = new Object();
-          if (!url)
-              url = location.href;
-          if (url.indexOf("?") !== -1){
-              var str = url.substr(url.indexOf("?") + 1) + "&";
-              var strs = str.split("&");
-              for (var i = 0; i < strs.length - 1; i++){
-                  var key = strs[i].substring(0, strs[i].indexOf("="));
-                  var val = strs[i].substring(strs[i].indexOf("=") + 1);
-                  theRequest[key] = val;
-              }
-          }
-          return theRequest;
-      }
       var id = getParams()['id']
       $.get('markdown/'+id+'/article.md',{v:Math.random()},function(data,status){
-        $('#content').empty().append(marked(data));
+        var data = handledata(data);
+        $('#head').empty().append('<h2>'+data['headinfo']['title']+'</h2><h3>'+data['headinfo']['date']+'</h3>');
+        $('#content').empty().append(marked(data['content']));
         $('#content').find('img').each(function(){
           $(this).attr('src','markdown/'+id+'/'+$(this).attr('src'));
         })
@@ -44,11 +32,16 @@
     #content{
       word-break:break-all;
     }
+    #head{
+
+    }
   </style>
 </head>
 <body>
 <div id="main">
   <h1><a href="index.html">LoongKo的博客</a></h1>
+  <hr>
+  <div id="head"></div>
   <hr>
   <div id="content" class="markdown-body"></div>
 </div>

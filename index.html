@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
   <link rel="stylesheet" type="text/css" href="jquery-pagination/pagination.css" />
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/default.js"></script>
   <script type="text/javascript" src="jquery-pagination/jquery.pagination.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <style type="text/css">
-    #tag{
+    #categories{
       word-wrap: break-word;
     }
-    #tag a{
+    #categories a{
       color: #0395E7;
       text-decoration: none;
       margin: 20px;
     }
-    #tag .tag-now{
+    #categories .categories-now{
       font-size: 200%;
     }
     #list .result{
@@ -34,18 +35,21 @@
       font-size: 1.2em;
       word-break:break-all;
     }
-    .tags{
+    .categories{
       font-weight: bold;
+    }
+    .date{
+      color: gray;
     }
   </style>
 </head>
 <body>
 <div id="main">
   <h1>LoongKo的博客</h1>
-  <div id="tag">
+  <div id="categories">
   </div>
   <div id="list">
-    <div id="Searchresult">加载中......</div>
+    <div id="Searchresult"><img src="img/loading.gif">加载中......</div>
     <div id="Pagination" class="pagination"></div>
   </div>
 </div>

@@ -1,5 +1,11 @@
-# drupal 7在一个form新增或者修改一个字段
-### 2016-7-8
+---
+title: drupal 7在一个form新增或者修改一个字段
+date: 2016-07-8
+categories: drupal
+tags: drupal
+---
+
+
 
 例如在以下页面新增一个工号字段
 

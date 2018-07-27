@@ -1,6 +1,9 @@
-# html局部打印
-## 2016-12-08
-
+---
+title: html局部打印
+date: 2016-12-08
+categories: html
+tags: html
+---
 html页面局部打印的小栗子
 
 只要修改点击打印的按钮和打印的div区域的id就行啦

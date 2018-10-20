@@ -2,9 +2,9 @@
 
 ## 自己利用一些js插件写的自用博客
 
-主要是自己写markdown文章，然后通过[marked.js](https://github.com/markedjs/marked)插件转成html，最后利用github pages展示出来。
+主要是自己写markdown文章，然后通过[marked.js](https://github.com/markedjs/marked)插件转成html，最后利用github pages展示出来。[demo](hhttps://loongko.github.io/blog)
 
-markdown文件是在线用[marked.js](https://github.com/markedjs/marked)插件解析的，不像hexo等方式在本地已经生成了静态的html文件，所以性能上肯定是hexo的方式比较好，我也推荐hexo的方式，本人的主要博客就是用hexo搭建的，[LoongKo](https://loongko.github.io/)。
+markdown文件是在线用[marked.js](https://github.com/markedjs/marked)插件解析的，不像hexo等方式在本地已经生成了静态的html文件，所以性能上肯定是hexo的方式比较好，我也推荐hexo的方式，本人的主要博客就是用hexo搭建的，[LoongKo](https://loongko.github.io)。
 
 唯一的好处是可以直接在github页面图形化操作新建文章文件，写文章内容以及发布，主要写这个东西的原因纯属兴趣，想试试而已o(^▽^)o
 

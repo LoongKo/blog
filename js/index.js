@@ -1,7 +1,7 @@
 $(function(){
     var allpost = [];
     var count_404 = 0;
-    for (var i = 1; i < 100; i++) {
+    for (var i = 1; i; i++) {
       $.ajax({
         // url:'markdown/'+i+'/article.md',
         url:'https://raw.githubusercontent.com/LoongKo/blog/master/markdown/'+i+'/article.md',

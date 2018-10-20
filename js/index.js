@@ -15,7 +15,6 @@ $(function(){
           post['id'] = i;
           post['article'] = result;
           allpost.push(post);
-          console.log(post)
           count_404 = 0;
         }
       });
@@ -28,7 +27,6 @@ $(function(){
     var categoriesname = getParams()['categories'];
     $.each(allpost.reverse(),function(key,value){
       var handledata2 = handledata(value['article']);
-      console.log(handledata2)
       var title = handledata2['headinfo']['title'];
       var categories = handledata2['headinfo']['categories'];
       var date = handledata2['headinfo']['date'];

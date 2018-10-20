@@ -3,7 +3,8 @@ $(function(){
     var count_404 = 0;
     for (var i = 1; i < 100; i++) {
       $.ajax({
-        url:'markdown/'+i+'/article.md',
+        // url:'markdown/'+i+'/article.md',
+        url:'https://raw.githubusercontent.com/LoongKo/blog/master/markdown/'+i+'/article.md',
         async:false,
         error:function(xhr,status,error){
           count_404++;
@@ -14,16 +15,20 @@ $(function(){
           post['id'] = i;
           post['article'] = result;
           allpost.push(post);
+          console.log(post)
           count_404 = 0;
         }
       });
-      if (count_404 === 10) break;
+      if (count_404 === 10) {
+        break;
+      }
     }
     var list_html = [];
     var categories_list = [];
     var categoriesname = getParams()['categories'];
     $.each(allpost.reverse(),function(key,value){
       var handledata2 = handledata(value['article']);
+      console.log(handledata2)
       var title = handledata2['headinfo']['title'];
       var categories = handledata2['headinfo']['categories'];
       var date = handledata2['headinfo']['date'];

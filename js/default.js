@@ -21,7 +21,7 @@
     var start = data.indexOf(start_string) + start_string.length;
     var stop = data.indexOf(end_string,start);
     var headinfo = data.substring(start,stop).trim();
-    var headinfo2 = headinfo.split("\r\n");
+    var headinfo2 = headinfo.split("\n");
     var headinfo_arr = [];
     $.each(headinfo2,function(index,value){
       headinfo_arr[value.substring(0,value.indexOf(separator)).trim()] = value.substring(value.indexOf(separator)+separator.length).trim();
